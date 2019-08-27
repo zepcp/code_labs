@@ -72,6 +72,10 @@ USER: Send public key to general server
 
     gpg --keyserver hkps://pgp.mit.edu --send-keys *your-key-ID*
 
+USER: Get the ASCII version of your public key
+
+    gpg --export --armor *your-key-ID*
+
 USER: See files unencrypted
 
     git-crypt unlock
