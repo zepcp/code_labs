@@ -60,18 +60,41 @@ SERVER: Use environment variables
 
 Git Crypt
 ----------
-Generate a gpg key
+USER: Generate a gpg key
 
     gpg --gen-key
 
-Get key details
+USER: Get key details
 
     gpg --list-keys
 
-Send public key to general server
+USER: Send public key to general server
 
     gpg --keyserver hkps://pgp.mit.edu --send-keys *your-key-ID*
 
-Ask repository owner to be added as a trusted user
+USER: See files unencrypted
 
+    git-crypt unlock
+
+OWNER: Initialize Git-Crypt
+
+    git-crypt init
+
+OWNER: Create a .gitattributes file on the same level that files you want to encrypt
+
+    vi src/.gitattributes
+    # Files that are going to be encrypted
+    config.py filter=git-crypt diff=git-crypt
+    # (I use gradle.properties to store credentials)
+    gradle.properties filter=git-crypt diff=git-crypt
+    # Making sure that .gitattributes is never encrypted. DON'T TOUCH THAT LINE AND ONE BELOW
+    .gitattributes !filter !diff
+
+OWNER: List files for encryption
+
+    git-crypt status -e
+
+OWNER: Add trusted users
+
+    gpg --keyserver hkp://pgp.mit.edu --recv-key *new-joiner-key-ID*
     git-crypt add-gpg-user john.doe@email.com
