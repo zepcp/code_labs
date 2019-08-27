@@ -1,5 +1,6 @@
 # Unencrypted files
 env/*.env
+env/*.decrypted
 
 # Virtual environment
 .env

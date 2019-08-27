@@ -12,11 +12,11 @@ Decrypt String
 
 Encrypt File
 
-    openssl enc -aes-256-cbc -salt -in <file_name> -out <encrypted_file>
+    openssl enc -aes-256-cbc -salt -in <file_name> -out <encrypted_file> -pass pass:mySecretPass
 
 Decrypt File
 
-    openssl enc -d -aes-256-cbc -in <encrypted_file> > <file_name>
+    openssl enc -d -aes-256-cbc -in <encrypted_file> > <file_name> -pass pass:mySecretPass
 
 Repository with Encrypted Environment Variables
 ----------
@@ -25,9 +25,9 @@ LOCAL: Add your environment variables
     vi env/your_file.env
     export VARIABLE="My Own Variable"
 
-LOCAL: Encrypt your file with password test1234
+LOCAL: Encrypt your file
 
-    openssl enc -aes-256-cbc -salt -in env/your_file.env -out env/your_file.env.gpg
+    openssl enc -aes-256-cbc -salt -in env/your_file.env -out env/your_file.env.gpg -pass pass:mySecretPass
 
 LOCAL: Git add, commit and push encrypted file
 
@@ -42,9 +42,10 @@ SERVER: Create virtual environment
 SERVER: On activate, add at the end of file
 
     vi .env/bin/activate
-    for var in `ls env/*.env`
+    for var in `ls env/*.env.gpg`
     do
-        . $var
+        openssl enc -d -aes-256-cbc -in $var > $var".decrypted" -pass pass:mySecretPass 
+        . $var".decrypted"
     done
 
 SERVER: Activate virtual environment
