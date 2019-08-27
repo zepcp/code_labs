@@ -97,4 +97,4 @@ OWNER: List files for encryption
 OWNER: Add trusted users
 
     gpg --keyserver hkp://pgp.mit.edu --recv-key *new-joiner-key-ID*
-    git-crypt add-gpg-user john.doe@email.com
+    git-crypt add-gpg-user --trusted john.doe@email.com
