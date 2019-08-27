@@ -60,4 +60,18 @@ SERVER: Use environment variables
 
 Git Crypt
 ----------
-...
+Generate a gpg key
+
+    gpg --gen-key
+
+Get key details
+
+    gpg --list-keys
+
+Send public key to general server
+
+    gpg --keyserver hkps://pgp.mit.edu --send-keys *your-key-ID*
+
+Ask repository owner to be added as a trusted user
+
+    git-crypt add-gpg-user john.doe@email.com
