@@ -41,11 +41,11 @@ SERVER: Create virtual environment
 
 SERVER: On activate, add at the end of file
 
-    vi .env/bin/activate
     for var in `ls env/*.env.gpg`
     do
         openssl enc -d -aes-256-cbc -in $var > $var".decrypted" -pass pass:mySecretPass 
         . $var".decrypted"
+        rm $var".decrypted"
     done
 
 SERVER: Activate virtual environment
