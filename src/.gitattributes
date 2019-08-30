@@ -1,5 +1,5 @@
 # Files that are going to be encrypted
-config.py filter=git-crypt diff=git-crypt
+webservice.py filter=git-crypt diff=git-crypt
 # (I use gradle.properties to store credentials)
 gradle.properties filter=git-crypt diff=git-crypt
 # Making sure that .gitattributes is never encrypted. DON'T TOUCH THAT LINE AND ONE BELOW

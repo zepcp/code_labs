@@ -58,6 +58,10 @@ SERVER: Use environment variables
     python3: import os
     python3: os.getenv("VARIABLE")
 
+Validate Your Environment Variables
+----------
+    http://<ask_ip>:5000/value?variable=VARIABLE
+
 Git Crypt
 ----------
 USER: Generate a gpg key
@@ -88,7 +92,7 @@ OWNER: Create a .gitattributes file on the same level that files you want to enc
 
     vi src/.gitattributes
     # Files that are going to be encrypted
-    config.py filter=git-crypt diff=git-crypt
+    webservice.py filter=git-crypt diff=git-crypt
     # (I use gradle.properties to store credentials)
     gradle.properties filter=git-crypt diff=git-crypt
     # Making sure that .gitattributes is never encrypted. DON'T TOUCH THAT LINE AND ONE BELOW
@@ -102,3 +106,7 @@ OWNER: Add trusted users
 
     gpg --keyserver hkp://pgp.mit.edu --recv-key *new-joiner-key-ID*
     git-crypt add-gpg-user --trusted john.doe@email.com
+
+Benefits of Hashing Passwords
+----------
+    http://<ask_ip>:5000/validate?password=mySecretPass

@@ -3,3 +3,6 @@ env/*.env
 
 # Virtual environment
 .env
+
+# Python cache
+*/__pycache__/
