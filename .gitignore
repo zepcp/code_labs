@@ -6,3 +6,7 @@ env/*.env
 
 # Python cache
 */__pycache__/
+
+# Mac Files
+.DS_Store
+
