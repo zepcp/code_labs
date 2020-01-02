@@ -105,6 +105,7 @@ OWNER: List files for encryption
 OWNER: Add trusted users
 
     gpg --keyserver hkp://pgp.mit.edu --recv-key *new-joiner-key-ID*
+    gpg --import *ascii-version-public-key*
     git-crypt add-gpg-user --trusted john.doe@email.com
 
 Benefits of Hashing Passwords
