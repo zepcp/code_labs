@@ -1,7 +1,7 @@
 # Code Labs
 Sharing Is Caring <3
 
-[Crypto Labs](crypto_labs/README.md)
+[Crypt Labs](crypt_labs/README.md)
 ----------
 - Encrypt Strings
 - Encrypt Files
