@@ -22,7 +22,7 @@ def creditcards(content):
 
 
 def phonenumbers(content):
-    """All Portuguese numbers"""
+    """All Portuguese phone numbers"""
     matches = re.findall(r"\(\+?0?0?351\).?([0-9- ]*)", content)
     return [match.replace("-", "").replace(" ", "") for match in matches]
 
