@@ -10,3 +10,7 @@ env/*.env
 # Mac Files
 .DS_Store
 
+# PyCharm
+.idea
+
+regex_labs/regex.py
