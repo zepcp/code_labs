@@ -1,12 +1,13 @@
-# Unencrypted files
-env/*.env
-
-# Virtual environment
-.env
+# Environment Files
+*.env
 
 # Python cache
-*/__pycache__/
+**/__pycache__/
 
 # Mac Files
 .DS_Store
 
+# PyCharm
+.idea
+
+regex_labs/regex.py
