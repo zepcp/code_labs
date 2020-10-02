@@ -9,7 +9,7 @@ def read_file(filename: str) -> str:
 
 
 def creditcards(content):
-    """All creditcards numbers and their brand"""
+    """All credit card numbers and respective brands"""
     matches = re.findall(r"([0-9\s]+)\n?([a-zA-Z\s]+)\n?", content)
 
     mylist = []
@@ -22,19 +22,19 @@ def creditcards(content):
 
 
 def phonenumbers(content):
-    """All phonenumbers"""
+    """All Portuguese numbers"""
     matches = re.findall(r"\(\+?0?0?351\).?([0-9- ]*)", content)
     return [match.replace("-", "").replace(" ", "") for match in matches]
 
 
 def emails(content):
-    """All emails except the ones with user: jose"""
+    """All emails except the ones with username: jose"""
     matches = re.findall(r"(.*(?<!\njose)@.+)", content)
     return [match for match in matches]
 
 
 def urls(content):
-    """All urls"""
+    """All urls and respective query arguments"""
     matches = re.finditer(r"https?://(?P<domain>.+)/(?P<args>\?.+)?", content)
 
     mylist = []
@@ -55,5 +55,4 @@ if __name__ == '__main__':
 
     file_content = read_file(args.run)
 
-    result = eval(args.run)(file_content)
-    [print(line) for line in result]
+    [print(line) for line in eval(args.run)(file_content)]
