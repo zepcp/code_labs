@@ -1,13 +1,13 @@
 # Code Labs
 Sharing Is Caring <3
 
-[Crypt Labs](crypt_labs/README.md)
+[Crypt Labs](crypt_labs)
 ----------
 - Encrypt Strings
 - Encrypt Files
 - Encrypt with Git-Crypt
 
-[Regex Labs](regex_labs/README.md)
+[Regex Labs](regex_labs)
 ----------
 - Meta sequences
 - Quantifiers
