@@ -10,12 +10,12 @@ def read_file(filename: str) -> str:
 
 def creditcards(content):
     """All creditcards numbers and their brand"""
-    matches = re.findall(r"([0-9\s]+)\n([a-zA-Z\s]+)\n?", content)
+    matches = re.findall(r"([0-9\s]+)\n?([a-zA-Z\s]+)\n?", content)
 
     mylist = []
     for match in matches:
-        number = match[0].replace(" ","")
-        brand = match[1]
+        number = match[0].replace(" ", "").replace("\n", "")
+        brand = match[1].replace("\n", "")
         mylist.append((number, brand))
 
     return mylist
@@ -23,35 +23,25 @@ def creditcards(content):
 
 def phonenumbers(content):
     """All phonenumbers"""
-    matches = re.findall(r"\(([0-5]\d{2})\) (\d)[0-9-]{6}\2", content)
-    # matches = re.findall(r"\(([0-5]\d{2})\) (\d)[0-9]{2}-\d{3}\2", content)
-
-    mylist = []
-    for match in matches:
-        mylist.append(match)
-
-    return mylist
+    matches = re.findall(r"\(\+?0?0?351\).?([0-9- ]*)", content)
+    return [match.replace("-", "").replace(" ", "") for match in matches]
 
 
 def emails(content):
-    """All emails except the ones containing: josem"""
-    # matches = re.findall(r"(.+(?<!josem)(@.+))", content)
-    matches = re.findall(r"(.+(?<!josem)(@[a-zA-Z]+.[a-zA-Z]+))", content)
-
-    mylist = []
-    for match in matches:
-        mylist.append(match[0])
-
-    return mylist
+    """All emails except the ones with user: jose"""
+    matches = re.findall(r"(.*(?<!\njose)@.+)", content)
+    return [match for match in matches]
 
 
 def urls(content):
     """All urls"""
-    matches = re.finditer(r"https://(?P<domain>.+)\?(?P<args>.+)", content)
+    matches = re.finditer(r"https?://(?P<domain>.+)/(?P<args>\?.+)?", content)
 
     mylist = []
     for match in matches:
-        mylist.append((match.group("domain"), match.group("args")))
+        args = match.group("args")
+        args = args[1:].split("&") if args else []
+        mylist.append((match.group("domain"), args))
 
     return mylist
 
@@ -66,4 +56,4 @@ if __name__ == '__main__':
     file_content = read_file(args.run)
 
     result = eval(args.run)(file_content)
-    print(result)
+    [print(line) for line in result]

@@ -14,11 +14,9 @@ MasterCard
 Visa
 3712 302250 39274
 American Express
-3770 857293 05579
-American Express
+3770 857293 05579 American Express
 5599 4571 4118 3358
-MasterCard
-3780 267025 51176
+MasterCard 3780 267025 51176
 American Express
 6011 6390 3796 6479
 Discover
@@ -32,8 +30,7 @@ Visa
 Discover
 5476 5183 5809 3834
 MasterCard
-3778 308155 15536
-American Express
+3778 308155 15536 American Express
 6011 3160 8535 6933
 Discover
 3496 876139 06837
@@ -44,7 +41,8 @@ American Express
 Discover
 6011 3816 2415 9719
 Discover
-6011 6871 7995 9224
+6011
+ 6871 7995 9224
 Discover
 5520 6129 5998 3075
 MasterCard
@@ -54,13 +52,16 @@ MasterCard
 Visa
 4916 2969 8450 1170
 Visa
-4716 4189 8526 3376
+4716
+4189
+ 8526
+3376
 Visa
 4556 4618 7843 8732
 Visa
 4485 0894 7297 8377
 Visa
-6011 7625 7836 2682
+6 0 1 1  7 6 2 5  7 8 3 6  2 6 8 2
 Discover
 6011 8191 0250 6091
 Discover
@@ -91,11 +92,11 @@ Visa
 4556 3822 4783 4999
 Visa
 3493 215535 54957
-American Express
+American
+Express
 3403 137820 43802
 American Express
 6011 2396 8439 4347
 Discover
 6011 6766 2381 3665
 Discover
-
