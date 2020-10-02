@@ -38,6 +38,6 @@ Example [here](https://regex101.com/r/DU3lN1/6)
 Exercises
 ----------
 1. Credit Cards: cleanly store all credit card numbers and respective brands
-2. Phone Numbers: cleanly store all Portuguese numbers and respective indicative
+2. Phone Numbers: cleanly store all Portuguese numbers and respective indicatives
 3. Emails: cleanly store all emails except the ones with user "jose"
 4. Urls: cleanly store all urls and respective query arguments
