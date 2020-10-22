@@ -69,8 +69,8 @@ Python Syntax
         re.TEMPLATE,  # disable backtracking == T
         re.DEBUG,  # dump pattern after compilation
     ]
-    
-    re.match(pattern, string, flags)  # Apply pattern at the start of the string
-    re.fullmatch(pattern, string, flags)  # Apply pattern to all of the string
-    re.findall(pattern, string, flags)  # Returns list of all non-overlapping matches in the string
-    re.finditer(pattern, string, flags)  # Returns an iterator over all non-overlapping matches in the string
+
+    re.match(pattern, string, flags=0)  # Apply pattern at the start of the string
+    re.fullmatch(pattern, string, flags=0)  # Apply pattern to all of the string
+    re.findall(pattern, string, flags=0)  # Returns list of all non-overlapping matches in the string
+    re.finditer(pattern, string, flags=0)  # Returns an iterator over all non-overlapping matches in the string
