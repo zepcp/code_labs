@@ -5,7 +5,8 @@ Meta sequences
     . - any single char
     \s - any whitespace char (space, tab or newline)
     \d - any digit (0-9)
-    $ - end of line
+    ^ - start of a line
+    $ - end of a line
     \ - escape special chars 
 Example [here](https://regex101.com/r/DU3lN1/1)
 
