@@ -4,7 +4,10 @@ Meta sequences
 ----------
     . - any single char
     \s - any whitespace char (space, tab or newline)
-    \d - any digit (0-9)
+    \d - any digit [0-9]
+    \w - any word character [a-zA-Z0-9_]
+    [a-z] - any lowercase letter
+    [A-Z] - any uppercase letter
     ^ - start of a line
     $ - end of a line
     \ - escape special chars 
