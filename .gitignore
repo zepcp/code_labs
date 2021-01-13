@@ -1,7 +1,7 @@
 # Environment Files
 *.env
 
-# Python cache
+# Python Cache
 **/__pycache__/
 
 # Mac Files
@@ -9,3 +9,9 @@
 
 # PyCharm
 .idea
+
+# Solidity Lab
+solidity_labs/build/
+solidity_labs/node_modules/
+solidity_labs/package-lock.json
+

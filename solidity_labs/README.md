@@ -12,7 +12,7 @@ Requirements
     brew install npm
     npm install -g truffle
     npm install -g ganache-cli
-    npm install -g web3
+    npm install web3
 
 - Due to an [ongoing bug](https://github.com/trufflesuite/ganache-cli/issues/732) on truffle node version should be <= 12.x.x
 
