@@ -10,7 +10,7 @@
 # PyCharm
 .idea
 
-# Solidity Lab
+# Solidity Labs
 solidity_labs/build/
 solidity_labs/node_modules/
 solidity_labs/package-lock.json
