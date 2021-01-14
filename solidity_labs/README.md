@@ -29,15 +29,15 @@ Initialize new project
 
 Create new contract
 
-    truffle create contract Bank
+    truffle create contract <name>
 
 Create migration file
 
-    truffle create migration bank
+    truffle create migration <name>
 
 Create new test file
 
-    truffle create test bank
+    truffle create test <name>
 
 Testing Locally
 ----------
