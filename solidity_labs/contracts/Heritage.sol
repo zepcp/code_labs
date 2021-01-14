@@ -1,7 +1,9 @@
 //SPDX-License-Identifier: MIT
+
+//Solidity compiler
 pragma solidity >=0.4.22 <0.9.0;
 
-//Heritage aims to provide an ultimate backup to your wallet in case of inactivity
+//Heritage contract aims to provide an ultimate backup to your wallet in case of inactivity
 contract Heritage {
 
     //Events are logs which can be easily subscribed by an listener
